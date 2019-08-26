@@ -13,13 +13,16 @@ int main(){
 	}
 	
 	for(int i = 0 ; i < n ; i++){
+		int min = 9999, index = 0;
 		for(int j = i ; j < n ; j++){
-			if(arr[i] > arr[j]){
-				int tmp = arr[i];
-				arr[i] = arr[j];
-				arr[j] = tmp;
+			if(min > arr[j]){
+				min = arr[j];
+				index = j;
 			}
 		}
+		int tmp = arr[i];
+		arr[i] = arr[index];
+		arr[index] = tmp;
 	}
 	
 	for(int i = 0 ; i < n ; i++){
